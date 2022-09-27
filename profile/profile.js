@@ -18,13 +18,10 @@ let error = null;
 window.addEventListener('load', async () => {
     // > Part B:
     //      - get the profile based on user.id
-    // console.log(user);
-    console.log('user.id', user.id);
     const response = await getProfile(user.id);
     //      - set profile and error state from response object
     error = response.error;
     profile = response.data;
-    console.log('err', error, 'profil', profile);
     if (error) {
         displayError();
     }
@@ -77,7 +74,6 @@ profileForm.addEventListener('submit', async (e) => {
 
 function displayProfile() {
     // > Part B: update user name and bio from profile object
-    // console.log(profile);
     userNameInput.value = profile.user_name;
     bioTextArea.value = profile.bio;
 }
