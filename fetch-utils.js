@@ -1,6 +1,6 @@
-const SUPABASE_URL = 'https://rtgjuzfenqqzvbeuakok.supabase.co';
+const SUPABASE_URL = 'https://jojlzgvqavrarvjmcooh.supabase.co';
 const SUPABASE_KEY =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0Z2p1emZlbnFxenZiZXVha29rIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjA0OTk4NTUsImV4cCI6MTk3NjA3NTg1NX0.8oeztp3xsNKS41oByRVPcWzX-MM8_vXfcKfiEyH8A5s';
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impvamx6Z3ZxYXZyYXJ2am1jb29oIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQyOTU2NjcsImV4cCI6MTk3OTg3MTY2N30.s3IqhgmffpidIKEi2tsx5pe8FPnLZg3t5D8z2Fh_I3M';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -31,6 +31,8 @@ export async function signOutUser() {
 
 export async function updateProfile(profile) {
     // > Part A: upsert into profiles table
+    response = await client.from('profiles').upsert(profile).single();
+    return response;
 }
 
 export async function getProfile(id) {
