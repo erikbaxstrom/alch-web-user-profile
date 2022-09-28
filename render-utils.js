@@ -1,10 +1,10 @@
-export function renderProfile(profile, userId) {
+export function renderProfile(profile, user) {
     const li = document.createElement('li');
     li.classList.add('profile');
     // > Part D: conditionally add "self" class to li if
     // this profile belongs to the current user
-
-    if (profile.userId === userId) {
+    console.log(profile);
+    if (profile.id === user.id) {
         li.classList.add('self');
     }
 
@@ -14,7 +14,6 @@ export function renderProfile(profile, userId) {
     const bioEl = document.createElement('p');
     bioEl.classList.add('bio');
     bioEl.textContent = profile.bio;
-
     li.append(userNameEl, bioEl);
     return li;
 }
