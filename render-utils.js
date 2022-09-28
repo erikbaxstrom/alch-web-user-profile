@@ -3,7 +3,6 @@ export function renderProfile(profile, user) {
     li.classList.add('profile');
     // > Part D: conditionally add "self" class to li if
     // this profile belongs to the current user
-    console.log(profile);
     if (profile.id === user.id) {
         li.classList.add('self');
     }
